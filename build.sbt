@@ -11,14 +11,14 @@ addCommandAlias("ci-jvm",     ";clean ;coreJVM/test:compile ;coreJVM/test")
 addCommandAlias("ci-js",      ";clean ;coreJS/test:compile  ;coreJS/test")
 addCommandAlias("release",    ";project monix ;+clean ;+package ;+publishSigned ;sonatypeReleaseAll")
 
-val catsVersion = "1.1.1-SNAPSHOT"
+val catsVersion = "1.1.1-KH"
 // Hash version is safe, containing a laws fix over 1.0.0-RC2:
 // https://github.com/typelevel/cats-effect/pull/277
-val catsEffectVersion = "1.0.0-RC2-4c47356-SNAPSHOT"
+val catsEffectVersion = "1.0.0-KH"
 val jcToolsVersion = "2.1.1"
 val reactiveStreamsVersion = "1.0.2"
-val scalaTestVersion = "3.1.0-SNAP7"
-val minitestVersion = "2.1.2-SNAPSHOT"
+val scalaTestVersion = "3.1.0-KH"
+val minitestVersion = "2.0.0-KH"
 
 // The Monix version with which we must keep binary compatibility.
 // https://github.com/typesafehub/migration-manager/wiki/Sbt-plugin
@@ -523,7 +523,7 @@ enablePlugins(GitVersioning)
 /* The BaseVersion setting represents the in-development (upcoming) version,
  * as an alternative to SNAPSHOTS.
  */
-git.baseVersion := "3.0.0"
+git.baseVersion := "3.0.0-KH"
 
 val ReleaseTag = """^v(\d+\.\d+(?:\.\d+(?:[-.]\w+)?)?)$""".r
 git.gitTagToVersionNumber := {
