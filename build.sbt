@@ -11,14 +11,14 @@ addCommandAlias("ci-jvm",     ";clean ;coreJVM/test:compile ;coreJVM/test")
 addCommandAlias("ci-js",      ";clean ;coreJS/test:compile  ;coreJS/test")
 addCommandAlias("release",    ";project monix ;+clean ;+package ;+publishSigned ;sonatypeReleaseAll")
 
-val catsVersion = "1.1.0"
+val catsVersion = "1.1.1-SNAPSHOT"
 // Hash version is safe, containing a laws fix over 1.0.0-RC2:
 // https://github.com/typelevel/cats-effect/pull/277
-val catsEffectVersion = "1.0.0-RC2-93ac33d"
+val catsEffectVersion = "1.0.0-RC2-4c47356-SNAPSHOT"
 val jcToolsVersion = "2.1.1"
 val reactiveStreamsVersion = "1.0.2"
-val scalaTestVersion = "3.0.4"
-val minitestVersion = "2.1.1"
+val scalaTestVersion = "3.1.0-SNAP7"
+val minitestVersion = "2.1.2-SNAPSHOT"
 
 // The Monix version with which we must keep binary compatibility.
 // https://github.com/typesafehub/migration-manager/wiki/Sbt-plugin
@@ -276,8 +276,8 @@ lazy val testSettings = Seq(
   testFrameworks := Seq(new TestFramework("minitest.runner.Framework")),
   libraryDependencies ++= Seq(
     "io.monix" %%% "minitest-laws" % minitestVersion % Test,
-    "org.typelevel" %%% "cats-laws" % catsVersion % Test,
-    "org.typelevel" %%% "cats-effect-laws" % catsEffectVersion % Test
+    //"org.typelevel" %%% "cats-laws" % catsVersion % Test,
+    //"org.typelevel" %%% "cats-effect-laws" % catsEffectVersion % Test
   )
 )
 

@@ -29,7 +29,7 @@ private[schedulers] object JSTimer {
       try { r.run() }
       catch { case t: Throwable => ec.reportFailure(t) }
 
-    js.Dynamic.global.setTimeout(lambda, delayMillis)
+    js.Dynamic.global.setTimeout(lambda, delayMillis.toInt)
   }
 
   def clearTimeout(task: js.Dynamic): js.Dynamic = {
